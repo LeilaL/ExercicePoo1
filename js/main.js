@@ -17,7 +17,7 @@
 var user = {
   prenom: "Martin",
   nom: "Matin",
-  pays: "FRANCE",
+  pays: "France".toUpperCase(),
   age: 18,
   paiement:["visa", "mastercard", "cb"],
 };
@@ -25,11 +25,10 @@ var user = {
 alert("Je m'appelle" + " " + user.prenom);
 alert("Mon nom est" + " " + user.nom);
 alert("Je suis né en" + " " + (2017-user.age));
-var x;
 
 var infos = {
   paysAutorisés: ["FRANCE", "BELGIQUE", "SUISSE", "LUXEMBOURG"],
-  paimentAutorisés: ["VISA", "MASTERCARD", "CB", "PAYPAL"],
+  paiementAutorisés: ["VISA", "MASTERCARD", "CB", "PAYPAL"],
   ageMin: 18,
   getAutorisation: function() {
     if (user.age >= infos.ageMin) {
@@ -40,11 +39,18 @@ for (x in infos.paysAutorisés){
   alert("Pays Ok");
 }
 
-for (x in infos.paimentAutorisés){
-  alert("Pays Ok");
-}
+// for (x in infos.paimentAutorisés){
+//   alert("Paiement OK");
+// }
 
   }
-
 };
+
+  function verification(a) {
+  if (infos.paiementAutorisés.indexOf(user.paiement.toUpperCase()) !== -1) {
+alert("Paiement OK");
+  }
+}
+
 infos.getAutorisation();
+verification();
