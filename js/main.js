@@ -35,9 +35,9 @@ var infos = {
       alert("Vous pouvez naviguer sur notre site");
 }
 
-for (x in infos.paysAutorisés){
-  alert("Pays Ok");
-}
+// for (x in infos.paysAutorisés){
+//   alert("Pays Ok");
+// } NE FONCTIONNE PAS
 
 // for (x in infos.paimentAutorisés){
 //   alert("Paiement OK");
@@ -45,6 +45,8 @@ for (x in infos.paysAutorisés){
 
   }
 };
+
+// REVOIR FUNCTION POUR VERIF PAIEMENT
 
   function verification(a) {
   if (infos.paiementAutorisés.indexOf(user.paiement.toUpperCase()) !== -1) {
