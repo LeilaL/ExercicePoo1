@@ -19,12 +19,19 @@ var user = {
   nom: "Matin",
   pays: "France".toUpperCase(),
   age: 18,
-  paiement:["visa", "mastercard", "cb"],
+  paiement:"visa",
+
+  getName: function() {
+    alert("Je m'appelle" + " " + this.prenom);
+  }
+  getLastName: function() {
+    alert("Mon nom est" + " " + this.nom);
+  }
+  getLastName: function() {
+    alert("Je suis né en" + " " + (2017-user.age));
+  }
 };
 
-alert("Je m'appelle" + " " + user.prenom);
-alert("Mon nom est" + " " + user.nom);
-alert("Je suis né en" + " " + (2017-user.age));
 
 var infos = {
   paysAutorisés: ["FRANCE", "BELGIQUE", "SUISSE", "LUXEMBOURG"],
@@ -33,11 +40,18 @@ var infos = {
   getAutorisation: function() {
     if (user.age >= infos.ageMin) {
       alert("Vous pouvez naviguer sur notre site");
+      }
+
+      verification : function(a) {
+      if (infos.paiementAutorisés.indexOf(user.paiement.toUpperCase()) !== -1) {
+    alert("Paiement OK");
+      }
+
 }
 
 // for (x in infos.paysAutorisés){
 //   alert("Pays Ok");
-// } NE FONCTIONNE PAS
+// } NE FONCTIONNE PAS , mettre argument , mettre alert dans objet, faire boucle for pour tableau
 
 // for (x in infos.paimentAutorisés){
 //   alert("Paiement OK");
@@ -48,11 +62,7 @@ var infos = {
 
 // REVOIR FUNCTION POUR VERIF PAIEMENT
 
-  function verification(a) {
-  if (infos.paiementAutorisés.indexOf(user.paiement.toUpperCase()) !== -1) {
-alert("Paiement OK");
-  }
-}
+
 
 infos.getAutorisation();
 verification();
