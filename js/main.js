@@ -17,20 +17,23 @@
 var user = {
   prenom: "Martin",
   nom: "Matin",
-  pays: "France".toUpperCase(),
-  age: 18,
+  pays: "croatie".toUpperCase(),
+  age: 17,
   paiement:"visa",
 
   getName: function() {
     alert("Je m'appelle" + " " + this.prenom);
-  }
+  },
   getLastName: function() {
     alert("Mon nom est" + " " + this.nom);
-  }
-  getLastName: function() {
-    alert("Je suis né en" + " " + (2017-user.age));
-  }
+  },
+  getAge: function() {
+    alert("Je suis né en" + " " + (2017-this.age));
+  },
 };
+user.getName();
+user.getLastName();
+user.getAge();
 
 
 var infos = {
@@ -40,14 +43,31 @@ var infos = {
   getAutorisation: function() {
     if (user.age >= infos.ageMin) {
       alert("Vous pouvez naviguer sur notre site");
-      }
+    }
+    else {
+      alert("Vous êtes trop jeune");
+    }
+  },
 
-      verification : function(a) {
+  verifPays : function(a) {
+  if (infos.paysAutorisés.indexOf(user.pays.toUpperCase()) !== -1) {
+alert("Pays OK");
+  }
+  else {
+    alert("pays non autorisé!")
+  }
+},
+
+      verifPaiement : function(a) {
       if (infos.paiementAutorisés.indexOf(user.paiement.toUpperCase()) !== -1) {
     alert("Paiement OK");
       }
+},
+};
+infos.getAutorisation();
+infos.verifPays();
+infos.verifPaiement();
 
-}
 
 // for (x in infos.paysAutorisés){
 //   alert("Pays Ok");
@@ -56,13 +76,3 @@ var infos = {
 // for (x in infos.paimentAutorisés){
 //   alert("Paiement OK");
 // }
-
-  }
-};
-
-// REVOIR FUNCTION POUR VERIF PAIEMENT
-
-
-
-infos.getAutorisation();
-verification();
