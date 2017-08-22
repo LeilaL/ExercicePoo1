@@ -19,7 +19,7 @@ var user = {
   nom: "Matin",
   pays: "croatie".toUpperCase(),
   age: 17,
-  paiement:"visa",
+  paiement:["jj", "kiki", "lili"],
 
   getName: function() {
     alert("Je m'appelle" + " " + this.prenom);
@@ -59,7 +59,7 @@ alert("Pays OK");
 },
 
       verifPaiement : function(a) {
-      if (infos.paiementAutorisés.indexOf(user.paiement.toUpperCase()) !== -1) {
+      for (let i=0; i < user.paiement.length ; i++) {
     alert("Paiement OK");
       }
 },
@@ -69,10 +69,5 @@ infos.verifPays();
 infos.verifPaiement();
 
 
-// for (x in infos.paysAutorisés){
-//   alert("Pays Ok");
-// } NE FONCTIONNE PAS , mettre argument , mettre alert dans objet, faire boucle for pour tableau
 
-// for (x in infos.paimentAutorisés){
-//   alert("Paiement OK");
-// }
+//  , mettre argument , faire boucle for pour tableau
